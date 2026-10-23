@@ -6,13 +6,14 @@ Most architecture material starts with a folder tree. This one starts with a ver
 
 ## What it produces
 
-Every run returns five sections:
+Every run returns five sections, plus an optional sixth artifact:
 
 1. **Fit verdict** — `full`, `selective`, or `not viable`, with evidence and confidence.
 2. **Benefits and drawbacks** — grounded in the project's size, team, change rate, and coupling.
 3. **Breaking changes** — public API, DI, config, serialization, schema, export paths, deployment, build.
 4. **Migration plan** — phases with exit criteria and rollback. Existing systems are wrapped and moved inward, never rewritten.
 5. **Target architecture** — directory tree, dependency rule, enforcement tool, export map.
+6. **Project rules** *(optional)* — a ≤ 60-line block for the project's `AGENTS.md`, plus a detail-file outline, written only after the structure is confirmed.
 
 ## How it works
 
@@ -46,6 +47,7 @@ reference/
   migration.md              strangler, seams, characterization tests
   anti-patterns.md          what goes wrong and how to spot it
   checklists.md             review gates
+  agent-rules.md            rules encoded into a project's AGENTS.md
   examples/                 csharp.md, java.md, typescript.md, angular.md
 ```
 

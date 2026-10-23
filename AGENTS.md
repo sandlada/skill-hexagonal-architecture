@@ -73,6 +73,8 @@ Every plan answers these five questions, in this order:
 
 `selective` keeps all five sections: Section 4 is scoped to the core, Section 5 shows both sides of the boundary. `not viable` replaces Sections 4-5 with the alternative's target shape and boundary; no hexagonal tree is emitted.
 
+When the target is accepted, or on request, a sixth artifact encodes the rules into the consuming project's `AGENTS.md`; see `reference/agent-rules.md`. It never replaces Section 5.
+
 ## 6. Structure options
 
 Three decisions, all recorded in the options record.
@@ -108,6 +110,7 @@ reference/
   migration.md            strangler, seams, characterization tests, phasing
   anti-patterns.md
   checklists.md           review checklist and definition of done
+  agent-rules.md          rules encoded into a consuming project's AGENTS.md
   examples/               csharp.md, typescript.md, angular.md, java.md
 README.md                 human-facing; never loaded as agent instructions
 AGENTS.md                 this file
@@ -131,4 +134,4 @@ Before calling work done:
 - A new layout tier requires three edits: the tier file, a row in `layouts/index.md`, and a route in `SKILL.md`.
 - Changing the layout or tooling means updating this section.
 
-Current state (2026-10): all 20 Markdown files exist — `AGENTS.md`, `SKILL.md`, `README.md`, and 17 files under `reference/` (8 top-level, 5 layouts, 4 examples). There is no git repo, build, test, or lint tooling — do not invent commands. Verification is structural: headings, routing reachability, relative links, table shape.
+Current state (2026-10): all 21 Markdown files exist — `AGENTS.md`, `SKILL.md`, `README.md`, and 18 files under `reference/` (9 top-level, 5 layouts, 4 examples). There is no git repo, build, test, or lint tooling — do not invent commands. Verification is structural: headings, routing reachability, relative links, table shape.

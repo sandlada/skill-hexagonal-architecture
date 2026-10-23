@@ -9,15 +9,18 @@ A decision skill, not a tutorial. It inspects a project, produces a verdict, and
 
 ## Output contract
 
-Every invocation that produces a verdict returns these five sections, in this order:
+Every invocation that produces a verdict returns these five sections, in this order, plus an optional sixth when rules are requested:
 
 1. **Fit verdict** — `full`, `selective`, or `not viable`, with evidence and confidence.
 2. **Benefits and drawbacks** — tied to this project's constraints, including who pays each cost.
 3. **Breaking changes** — checked against all eight areas, with `none` only if verified.
 4. **Migration plan** — phases, exit criteria, rollback; wrap and move, never rewrite.
 5. **Target architecture** — tree, dependency rule, enforcement tool, export map.
+6. **Project rules** *(optional)* — the rule block to paste into the project's `AGENTS.md`, plus the detail-file outline.
 
 A prose answer without all five is incomplete. `selective` keeps all five: Section 4 covers only the core, Section 5 shows both sides of the boundary. `not viable` replaces Sections 4–5 with the recommended alternative and emits no hexagonal tree. A request with no project evidence gets the tier comparison plus an explicit "no verdict possible", never a fabricated plan.
+
+The sixth artifact is not part of the five-section contract. Emit it on request, or by default once the target is accepted; never in place of Section 5.
 
 ## Workflow
 
@@ -69,7 +72,13 @@ Recommend inheriting whatever the project already uses. If the user does not ans
 
 Read `reference/layouts/index.md`, run its decision flow, then open **exactly one** tier file. Apply the options record from step 4. Include the enforcement tool for the project's stack.
 
-### 6. Self-check
+### 6. Emit the project rules (on request)
+
+Read `reference/agent-rules.md`. Produce the rule block for the project's `AGENTS.md` from the confirmed options record, plus the detail-file outline. The block is ≤ 60 lines, path-specific, and names one enforcement command.
+
+Emit rules only after the target is confirmed. Rules written before the structure settles encode a structure that will change.
+
+### 7. Self-check
 
 Run the checklist at the end of `reference/plan-template.md`, then the gate in `reference/checklists.md` §5. If a check fails, fix the plan before returning it.
 
@@ -87,6 +96,7 @@ Run the checklist at the end of `reference/plan-template.md`, then the gate in `
 | Existing system migration | `reference/migration.md` |
 | Smells and failure modes | `reference/anti-patterns.md` |
 | Review gate and definition of done | `reference/checklists.md` |
+| Encode rules into the project's `AGENTS.md` | `reference/agent-rules.md` |
 | Stack-specific structure | `reference/examples/csharp.md`, `java.md`, `typescript.md`, `angular.md` |
 
 Load only what the current step needs. Layouts are two-step: index first, then one tier. Examples are opt-in: one file, matching the project's stack.
@@ -100,6 +110,7 @@ Load only what the current step needs. Layouts are two-step: index first, then o
 - **Every layout names an enforcement tool**, not "code review".
 - **`selective` is a first-class outcome**, not a compromise.
 - **Do not mix vocabularies** in one target tree.
+- **Rules are written after the structure is confirmed**, in the recorded vocabulary, with a command that proves them.
 
 ## Refusals
 

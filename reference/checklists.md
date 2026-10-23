@@ -114,6 +114,7 @@ A PR that cannot satisfy items 1–4 is not a migration change; it is a rewrite 
 - [ ] Rollback has been executed once in staging, with the time to roll back recorded.
 - [ ] Metrics, logs, and traces for the moved operations match the baseline for seven days or one release cycle, whichever is longer.
 - [ ] No port lacks a production implementation; no adapter lacks a contract or integration test.
+- [ ] The project's architecture rules in `AGENTS.md` match the recorded vocabulary and name the enforcement command.
 - [ ] Options record unchanged; if it changed, the target tree was regenerated and breaking changes re-checked.
 - [ ] Module documentation or ADR states the boundary and the command that verifies it.
 - [ ] Debt register updated: every temporary ACL, duplicate path, and TODO has an owner and a date.
